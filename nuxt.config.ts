@@ -20,5 +20,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },  
-  
+  css: [
+    'boxicons/css/boxicons.min.css'
+  ],
 })
