@@ -6,5 +6,5 @@
 </script>
 
 <template>
-    <div>index page</div>
+    <Distributor />
 </template>

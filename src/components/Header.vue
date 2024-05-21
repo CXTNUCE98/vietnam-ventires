@@ -70,5 +70,7 @@ function toggle() {
     /* width: 100%; */
     width: 40px;
     bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 </style>
