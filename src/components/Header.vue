@@ -61,6 +61,7 @@ function toggle() {
 .bg-home{
     background-image: url(../public/bg-home-1.png);
     height: 766px;
+    object-fit: cover;
 }
 
 .active::before{

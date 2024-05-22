@@ -41,18 +41,23 @@ const email = ref()
                 <div class="font-bold text-21px text-#181433 pb-2">Join Our Newsletter</div>
 
                 <div class="flex bg-#EEEEFF">
-                    <!-- <el-input v-model="email"
-                        class="[&_.el-input\_\_wrapper]:(outline-none bg-#EEEEFF border-none shadow-none h-52px)" />
-                    <el-button color="#DF6951" class="[&_.el-button]:h-52px">Subcribe</el-button> -->
-                    <el-input v-model="email" class="[&_.el-input\_\_wrapper]:(outline-none bg-#EEEEFF border-none shadow-none h-52px) [&_.el-input-group\_\_append]:(bg-#DF6951 font-semibold text-white rounded-lg cursor-pointer)" placeholder="Your email address">
+                    <el-input v-model="email"
+                        class="[&_.el-input\_\_wrapper]:(outline-none bg-#EEEEFF border-none shadow-none h-52px) [&_.el-input-group\_\_append]:(bg-#DF6951 font-semibold text-white rounded-lg cursor-pointer)"
+                        placeholder="Your email address">
                         <template #append class="bg-#DF6951">
-                            <div >
+                            <div>
                                 Subcribe
                             </div>
                         </template>
                     </el-input>
+
                 </div>
+                <p class="pt-4 max-w-330px text-#181433">* Will send you weekly updates for your better
+                    tour packages.</p>
             </div>
+        </div>
+        <div class="pt-10">
+            Copyright @ Xpro 2022. All Rights Reserved.
         </div>
     </div>
 </template>
