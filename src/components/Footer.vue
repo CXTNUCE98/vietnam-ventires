@@ -6,8 +6,8 @@ const email = ref()
 </script>
 
 <template>
-    <div class="footer-bg flex justify-center items-center">
-        <div class="w-65% flex justify-between">
+    <div class="footer-bg flex justify-center items-center ">
+        <div class="w-65% flex justify-between flex-wrap">
             <div>
                 <img :src="Travel" class="h-64px" alt="travel_logo">
                 <p class="text-#757095 max-w-213px py-4">Travel helps companies manage payments easily.</p>

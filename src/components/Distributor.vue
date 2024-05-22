@@ -21,7 +21,7 @@ const distributor = [
 </script>
 
 <template>
-    <div class="marquee py-10">
+    <div class="marquee py-14">
         <div class="marquee-content flex justify-around w-full" >
             <template v-for="i in distributor" :key="i">
                 <img :src="i" class="marquee-item">
