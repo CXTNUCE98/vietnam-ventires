@@ -19,6 +19,8 @@
     "@tanstack/vue-query": "^5.28.9",
     "axios": "^1.6.8",
     "boxicons": "^2.1.4",
+    "embla-carousel-autoplay": "^8.1.3",
+    "embla-carousel-vue": "^8.1.3",
     "nuxt": "^3.11.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
@@ -26,6 +28,7 @@
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.6.0",
     "@unocss/nuxt": "^0.59.4",
+    "@vue-macros/nuxt": "^1.9.33",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "autoprefixer": "^10.4.19",

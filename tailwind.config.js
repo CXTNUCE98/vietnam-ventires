@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import HomeImg from '@/public/bg-home-1.png'
 
 export default {
   content: [
@@ -12,9 +11,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'home-img': `url(${HomeImg})`,
-      }
     },
     fontFamily: {
       'body': [

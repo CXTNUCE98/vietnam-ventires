@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: [
       'constants',
+      'composables',
     ],
   },
   app: {
@@ -13,7 +14,7 @@ export default defineNuxtConfig({
     baseURL: '/',
   },
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', "@nuxtjs/tailwindcss", '@element-plus/nuxt', '@unocss/nuxt'],
+  modules: ['@vueuse/nuxt', "@nuxtjs/tailwindcss", '@element-plus/nuxt', '@unocss/nuxt', '@vue-macros/nuxt'],
   postcss: {
     plugins: {
       tailwindcss: {},
