@@ -10,8 +10,8 @@ import Beach from "@/public/preview-beach.png"
 import Avatar from "@/public/avatar.png"
 import Newyork from "@/public/new-york.png"
 import Paris from "@/public/paris.png"
-
-
+import LakeLouise from "@/public/lake-louise.png"
+import Tokyo from "@/public/tokyo.png"
 
 </script>
 
@@ -46,7 +46,7 @@ import Paris from "@/public/paris.png"
                     Non
                     quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus
                     illum
-                    aut optio quibusdam!" />
+                    aut optio quibusdam!" :isShowButton="true" />
             </div>
         </div>
     </div>
@@ -56,7 +56,62 @@ import Paris from "@/public/paris.png"
     <div class="flex justify-center items-center h-800px">
         <div class="w-80% flex items-center gap-16 relative">
             <div class="flex-1">
-                <SharedInforImage note="Fast & Easy" title="Get Your Favourite Resort Bookings" />
+                <SharedInforImage note="Fast & Easy" title="Get Your Favourite Resort Bookings">
+                    <template #custom>
+                        <div class="flex gap-20px flex-col">
+                            <div class="flex gap-4">
+                                <div>
+                                    <div class="w-[47px] h-12 relative">
+                                        <div
+                                            class="w-[47px] h-12 left-0 top-0 absolute bg-amber-400 rounded-[13px] flex justify-center items-center text-white text-20px">
+                                            <i class='bx bx-square'></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500 text-base font-bold font-['Poppins'] leading-tight">Choose
+                                        Destination</div>
+                                    <div class="text-gray-500 text-base font-normal font-['Poppins'] leading-tight">Lorem
+                                        ipsum dolor sit amet, consectetur <br />adipiscing elit. Urna, tortor tempus. </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div>
+                                    <div class="w-[47px] h-12 relative">
+                                        <div class="w-[47px] h-12 left-0 top-0 absolute bg-orange-600 rounded-[13px]"></div>
+                                        <div
+                                            class="w-[22.05px] h-[17.86px] left-[12.97px] top-[14.07px] absolute flex justify-center items-center text-white text-20px">
+                                            <i class='bx bx-swim'></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500 text-base font-bold font-['Poppins'] leading-tight">Check
+                                        Availability</div>
+                                    <div class="text-gray-500 text-base font-normal font-['Poppins'] leading-tight">Lorem
+                                        ipsum dolor sit amet, consectetur <br />adipiscing elit. Urna, tortor tempus. </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div>
+                                    <div class="w-[47px] h-12 relative">
+                                        <div class="w-[47px] h-12 left-0 top-0 absolute bg-sky-800 rounded-[13px]"></div>
+                                        <div
+                                            class="w-[22.50px] h-[18.75px] left-[12.75px] top-[15.62px] absolute flex justify-center items-center text-white text-20px">
+                                            <i class='bx bxs-car-wash'></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-gray-500 text-base font-bold font-['Poppins'] leading-tight">Let’s Go
+                                    </div>
+                                    <div class="text-gray-500 text-base font-normal font-['Poppins'] leading-tight">Lorem
+                                        ipsum dolor sit amet, consectetur <br />adipiscing elit. Urna, tortor tempus. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </SharedInforImage>
             </div>
             <div class="flex-1 relative h-454px">
                 <img :src="Fly" alt="fly-img" class="top-0 right-0 absolute w-692px h-385px" />
@@ -187,13 +242,13 @@ import Paris from "@/public/paris.png"
             </div>
         </div>
     </div>
-
+    <div class="mt-20" />
     <SharedSepratir :img="Newyork" text="Let’s make your next holiday amazing" />
 
     <div class="flex justify-center items-center h-800px">
-        <div class="w-80% flex items-center gap-16 relative">
+        <div class="w-80% flex items-center justify-between relative">
             <div>
-                <SharedInforImage note="Promotion" title="We Provide You Best Europe Sightseeing Tours"
+                <SharedInforImage note="Promotion" title="We Provide You Best Europe Sightseeing Tours" :isShowButton="true"
                     des="Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos. Non quis eius quo eligendi corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus illum aut optio quibusdam!" />
                 <SharedDestination />
             </div>
@@ -201,6 +256,21 @@ import Paris from "@/public/paris.png"
                 <img :src="Paris" class="min-w-400px" />
                 <div class="vertical-text">Breath Taking Viewes</div>
             </div>
+        </div>
+    </div>
+
+    <div class="flex pt-40 relative">
+        <SharedPromotion :image="LakeLouise" note="Promotion" title="Explore Nature" />
+        <SharedPromotion :image="Tokyo" note="Promotion" title="Explore Cities" />
+    </div>
+
+    <div class="flex justify-center items-center pt-40">
+        <div class="w-80% flex flex-col items-center relative">
+            <SharedInforImage note="Trendy" title="Our Trending Tour Packages" :is-center="true">
+                <template #custom>
+                    Content
+                </template>
+            </SharedInforImage>
         </div>
     </div>
 </template>
@@ -223,21 +293,4 @@ import Paris from "@/public/paris.png"
     font-weight: bold;
 }
 
-/* .bg-fly{
-    position: absolute;
-    background-image: url(../public/fly.png);
-    width: 692px;
-    height: 385px;
-    top: 0;
-    right: 0;
-} */
-
-/* .honey-img img {
-    object-fit: cover;
-    object-position: 58% 50%;
-    width: 100%;
-    height: 100%;
-    clip-path: path("M 0 690 L 0 690 A 4 5 0 0 1 473 330 L 690 690 Z");
-    image-rendering: pixelated;
-} */
 </style>

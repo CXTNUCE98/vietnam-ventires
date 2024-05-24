@@ -9,7 +9,7 @@ const { visible, info } = definePropsRefs<{
 </script>
 
 <template>
-    <el-dialog v-model="visible" :title="info.name" width="500" align-center class="[&_.el-dialog\_\_title]:font-bold">
+    <el-dialog v-model="visible" :title="info?.name" width="500" align-center class="[&_.el-dialog\_\_title]:font-bold">
         <span>Open the dialog from the center from the screen</span>
         <template #footer>
             <div class="dialog-footer">

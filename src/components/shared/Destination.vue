@@ -66,16 +66,16 @@ function openDetail(info: any) {
 
 <template>
     <div class="carousel-container" >
-        <Carousel class="relative embla mx-10" :opts="{
+        <div class="relative embla mx-10" :opts="{
             align: 'start',
             loop: true,
         }" ref="emblaRef" >
-            <CarouselContent class="embla__container">
-                <CarouselItem v-for="(item, index) in destinations" :key="index" class="basis-1/1 px-2 py-4 2xl:basis-1/5 lg:basis-1/3 md:basis-1/2 xl:basis-1/4">
+            <div class="embla__container">
+                <div v-for="(item, index) in destinations" :key="index" class="basis-1/1 px-2 py-4 2xl:basis-1/5 lg:basis-1/3 md:basis-1/2 xl:basis-1/4">
                     <SharedDestinationCard :product="item" @openDetail="openDetail(item)"/>
-                </CarouselItem>
-            </CarouselContent>
-        </Carousel>
+                </div>
+            </div>
+        </div>
     </div>
 
     <TourDetailDialog :visible="isShowTourDetail" :info="detail" @close="isShowTourDetail = false"/>
@@ -83,7 +83,7 @@ function openDetail(info: any) {
 
 <style scoped>
 .carousel-container {
-    width: 900px;
+    width: 1000px;
     overflow: hidden;
     position: absolute;
     margin: 0 auto;
@@ -101,4 +101,5 @@ function openDetail(info: any) {
     flex: 0 0 auto;
     width: 100%;
     min-width: 0;
-}</style>
+}
+</style>
