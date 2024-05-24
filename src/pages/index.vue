@@ -268,7 +268,7 @@ import Tokyo from "@/public/tokyo.png"
         <div class="w-80% flex flex-col items-center relative">
             <SharedInforImage note="Trendy" title="Our Trending Tour Packages" :is-center="true">
                 <template #custom>
-                    Content
+                    <Carousel />
                 </template>
             </SharedInforImage>
         </div>

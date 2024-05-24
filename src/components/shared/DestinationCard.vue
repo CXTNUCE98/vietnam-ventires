@@ -29,7 +29,7 @@ function openTourDetail() {
     </div>
 </template>
 
-<style scope>
+<style scoped>
 .card {
     height: 237px;
     min-width: 232px;

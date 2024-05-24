@@ -2,7 +2,7 @@
 import emblaCarouselVue from 'embla-carousel-vue'
 import Autoplay from 'embla-carousel-autoplay'
 
-const [emblaRef] = emblaCarouselVue({ loop: true }, [Autoplay()])
+const [emblaRef] = emblaCarouselVue({ loop: true, align: 'start' }, [Autoplay()])
 
 import Watch from "@/public/watch-london.png"
 import Italia from "@/public/italia.png"
@@ -66,10 +66,7 @@ function openDetail(info: any) {
 
 <template>
     <div class="carousel-container" >
-        <div class="relative embla mx-10" :opts="{
-            align: 'start',
-            loop: true,
-        }" ref="emblaRef" >
+        <div class="relative embla mx-10" ref="emblaRef" >
             <div class="embla__container">
                 <div v-for="(item, index) in destinations" :key="index" class="basis-1/1 px-2 py-4 2xl:basis-1/5 lg:basis-1/3 md:basis-1/2 xl:basis-1/4">
                     <SharedDestinationCard :product="item" @openDetail="openDetail(item)"/>
@@ -83,7 +80,7 @@ function openDetail(info: any) {
 
 <style scoped>
 .carousel-container {
-    width: 1000px;
+    width: 1100px;
     overflow: hidden;
     position: absolute;
     margin: 0 auto;
