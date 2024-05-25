@@ -273,6 +273,8 @@ import Tokyo from "@/public/tokyo.png"
             </SharedInforImage>
         </div>
     </div>
+
+    <SharedSeeAboutUs />
 </template>
 
 <style scoped>
