@@ -5,7 +5,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import BgAboutUs from "@/public/bg-about-us.png"
 import DoubleQuotes from "@/public/double-quotes.png"
 
-const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true, align: 'start' }, [Autoplay({delay: 40000})])
+const [emblaRef, emblaApi] = emblaCarouselVue({ loop: true, align: 'start' }, [Autoplay({delay: 4000})])
 
 const scrollPrev = () => {
     if (emblaApi.value) emblaApi.value.scrollPrev()
@@ -73,7 +73,7 @@ const commentList = [
                         <div v-for="(item, index) in commentList" :key="index"
                             class="relative min-w-[500px] h-[250px] bg-white rounded-[17px] mt-18 flex items-center justify-center flex-col">
                             <img :src="item.avatar" alt="user"
-                                class="absolute object-center pixelated left-1/2 top--60px transform rounded-full -translate-x-1/2 w-[110px] h-[120px] object-cover overflow-hidden">
+                                class="absolute object-center pixelated left-1/2 top--60px transform rounded-full -translate-x-1/2 w-[110px] h-[110px] object-cover overflow-hidden">
                             <img :src="DoubleQuotes" alt="double-quotes" class="absolute top-40px left-40px">
                             <div
                                 class="w-[393px] h-[114px] text-center text-black text-sm font-normal font-['Poppins'] leading-normal tracking-wide pt-4">

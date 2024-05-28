@@ -1,28 +1,40 @@
 <script setup lang="ts">
 import Logo from '@/public/logo.png'
+import BgHome from '@/public/bg-home-1.png'
+import BgAbout from '@/public/bg-header-about.png'
 
 const route = useRoute()
 const nav = ref([
     { label: 'Home', to: '/', active: true },
     { label: 'About', to: '/about' },
     { label: 'Service', to: '/service' },
-    { label: 'Upcomming Packages', to: '/packages' },
+    { label: 'Upcoming Packages', to: '/packages' },
 ])
 
 const curRoute = computed(() => {
     return route.path as string
 })
 
+const bgHeader = {
+    '/': BgHome,
+    '/about': BgAbout,
+}
 const isShowMenu = ref(false)
 function toggle() {
     console.log('running');
     isShowMenu.value = !isShowMenu.value
 }
+
+
+const isCenter = computed(() => {
+    return curRoute.value !== '/'
+})
 </script>
 
 <template>
-    <nav class="border-gray-200 dark:bg-gray-900 bg-home" >
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav class="relative border-gray-200 dark:bg-gray-900">
+        <img :src="bgHeader[curRoute]" class="absolute inset-0 w-full h-full object-cover z-0" alt="Background Image">
+        <div class="relative max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 z-10">
             <NuxtLink to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img :src="Logo" class="h-16 rounded-full" alt="Logo" />
             </NuxtLink>
@@ -42,8 +54,7 @@ function toggle() {
                         <li class="relative flex justify-center">
                             <NuxtLink
                                 class="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-#DF6951 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                :class="{ 'active': item.to === curRoute }"
-                                :to="item.to">
+                                :class="{ 'active': item.to === curRoute }" :to="item.to">
                                 {{ item.label }}
                             </NuxtLink>
                         </li>
@@ -55,20 +66,31 @@ function toggle() {
                 Get in touch
             </button>
         </div>
+
+        <div v-if="isCenter" class="absolute flex justify-center items-center w-full h-80% flex-col">
+            <div class="text-rose-50 text-lg font-bold font-['Poppins'] uppercase tracking-widest">Read</div>
+            <div class="text-white text-38 font-normal yesteryear-regular leading-56">About Us</div>
+        </div>
+        <div v-else class="absolute ">2</div>
     </nav>
 </template>
+
 <style scoped>
-.bg-home{
-    background-image: url(../public/bg-home-1.png);
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
+.yesteryear-regular {
+  font-family: "Yesteryear", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+nav {
     height: 766px;
-    object-fit: cover;
 }
 
-.active::before{
+.active::before {
     content: '';
     position: absolute;
     border-bottom: 4px solid #DF6951;
-    /* width: 100%; */
     width: 40px;
     bottom: -3px;
     left: 50%;
